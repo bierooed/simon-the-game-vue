@@ -121,11 +121,13 @@ export default {
         if (!this.checkSequence()) {
           alert("Game Over 🥲");
           this.gameStarted = false;
+          this.score = 0;
         } else if (this.playerSequence.length === this.sequence.length) {
           this.score += 1;
           alert("Correct! Next round 🏆");
           this.playerSequence = [];
           this.addToSequence();
+          this.highlightedButton = null;
           setTimeout(() => this.playSequence(), 1000);
         }
       }
