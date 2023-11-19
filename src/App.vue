@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Simon the game!</h1>
-
+    <h3>Score - {{ score }}</h3>
     <div id="simon-board">
       <div
         v-for="(color, index) in simonColors"
@@ -20,6 +20,7 @@ export default {
   name: "App",
   data() {
     return {
+      score: 0,
       simonColors: ["red", "blue", "green", "yellow"],
       gameStarted: false,
       sequence: [],
