@@ -8,6 +8,7 @@
         :key="index"
         :style="{ backgroundColor: color }"
         class="simon-button"
+        @click="handleButtonClick(index)"
       ></div>
     </div>
     <button @click="startGame">Start Game</button>
@@ -65,6 +66,32 @@ export default {
           index
         ].style.backgroundColor = currentColor;
       }, 1000);
+    },
+
+    handleButtonClick(index) {
+      if (this.gameStarted) {
+        this.playerSequence.push(index);
+        this.highlightButton(index);
+        if (!this.checkSequence()) {
+          alert("Game Over 🥲");
+          this.gameStarted = false;
+        } else if (this.playerSequence.length === this.sequence.length) {
+          this.score += 1;
+          alert("Correct! Next round 🏆");
+          this.playerSequence = [];
+          this.addToSequence();
+          setTimeout(() => this.playSequence(), 1000);
+        }
+      }
+    },
+
+    checkSequence() {
+      for (let i = 0; i < this.playerSequence.length; i++) {
+        if (this.playerSequence[i] !== this.sequence[i]) {
+          return false;
+        }
+      }
+      return true;
     },
   },
 };
