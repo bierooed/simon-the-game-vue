@@ -10,7 +10,7 @@
         class="simon-button"
       ></div>
     </div>
-    <button>Start Game</button>
+    <button @click="startGame">Start Game</button>
   </div>
 </template>
 
@@ -20,7 +20,18 @@ export default {
   data() {
     return {
       simonColors: ["red", "blue", "green", "yellow"],
+      gameStarted: false,
+      sequence: [],
+      playerSequence: [],
     };
+  },
+
+  methods: {
+    startGame() {
+      this.gameStarted = true;
+      this.sequence = [];
+      this.playerSequence = [];
+    },
   },
 };
 </script>
