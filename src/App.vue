@@ -32,12 +32,39 @@ export default {
       this.sequence = [];
       this.playerSequence = [];
       this.addToSequence();
+      this.playSequence();
     },
 
     addToSequence() {
       const randomIndex = Math.floor(Math.random() * 4);
       this.sequence.push(randomIndex);
       console.log(randomIndex);
+    },
+
+    playSequence() {
+      let i = 0;
+      const intervalId = setInterval(() => {
+        this.highlightButton(this.sequence[i]);
+        i++;
+        if (i >= this.sequence.length) {
+          clearInterval(intervalId);
+        }
+      }, 1000);
+    },
+
+    highlightButton(index) {
+      const currentBtn = document.getElementsByClassName("simon-button")[index];
+      const currentColor = currentBtn.style.backgroundColor;
+
+      document.getElementsByClassName("simon-button")[
+        index
+      ].style.backgroundColor = "orange";
+
+      setTimeout(() => {
+        document.getElementsByClassName("simon-button")[
+          index
+        ].style.backgroundColor = currentColor;
+      }, 1000);
     },
   },
 };
