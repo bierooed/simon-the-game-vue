@@ -155,7 +155,6 @@ export default {
 
 #simon-board {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   max-width: 200px;
   margin: 20px auto;
@@ -180,7 +179,7 @@ export default {
 }
 
 .simon-button {
-  width: 100%;
+  width: 150px;
   padding: 20px;
   font-size: 18px;
   cursor: pointer;
