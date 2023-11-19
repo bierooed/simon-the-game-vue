@@ -31,6 +31,13 @@ export default {
       this.gameStarted = true;
       this.sequence = [];
       this.playerSequence = [];
+      this.addToSequence();
+    },
+
+    addToSequence() {
+      const randomIndex = Math.floor(Math.random() * 4);
+      this.sequence.push(randomIndex);
+      console.log(randomIndex);
     },
   },
 };
