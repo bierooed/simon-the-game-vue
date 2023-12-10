@@ -15,7 +15,7 @@
 
 ---
 
-** Technologies used:** _Vue.js (Vue2)_
+**Technologies used:** _Vue.js (Vue2)_
 [Simon the Game gh-pages](https://bierooed.github.io/simon-the-game-vue/)
 
 [Simon the Game gh-pages](https://bierooed.github.io/simon-the-game-vue/)
